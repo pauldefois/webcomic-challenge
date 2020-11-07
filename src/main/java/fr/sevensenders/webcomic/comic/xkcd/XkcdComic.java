@@ -22,6 +22,8 @@ import lombok.ToString;
 @EqualsAndHashCode
 public class XkcdComic implements Serializable {
 
+    private static final long serialVersionUID = 7048126316068014259L;
+
     private String month;
 
     private int num;

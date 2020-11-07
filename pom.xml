@@ -24,6 +24,7 @@
         <start-class>fr.sevensenders.webcomic.Application</start-class>
         <spring-boot.version>2.3.5.RELEASE</spring-boot.version>
         <lombok.version>1.18.16</lombok.version>
+        <jackson-xml.version>2.9.0</jackson-xml.version>
     </properties>
 
     <build>
@@ -47,6 +48,18 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>${jackson-xml.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>rome</groupId>
+            <artifactId>rome</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 </project>
