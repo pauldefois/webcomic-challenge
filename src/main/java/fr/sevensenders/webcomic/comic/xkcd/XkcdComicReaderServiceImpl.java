@@ -39,7 +39,7 @@ public class XkcdComicReaderServiceImpl implements XkcdComicReaderService {
             result.add(currentComic.get());
             final int currentComicId = currentComic.get().getNum();
             // Retrieve the last n-1 comics
-            for (int i = currentComicId - 1; i >= currentComicId - numberOfComics - 1; i--) {
+            for (int i = currentComicId - 1; i > currentComicId - numberOfComics; i--) {
                 findComicById(i).ifPresent(result::add);
             }
         }
