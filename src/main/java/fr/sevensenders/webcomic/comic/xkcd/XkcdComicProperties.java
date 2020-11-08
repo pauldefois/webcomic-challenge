@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Defines the properties related to the xkcd API.
+ * Defines the properties related to the Xkcd API.
  */
 @NoArgsConstructor
 @Getter

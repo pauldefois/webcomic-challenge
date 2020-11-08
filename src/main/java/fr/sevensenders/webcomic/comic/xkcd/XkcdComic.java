@@ -5,6 +5,7 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import fr.sevensenders.webcomic.comic.Comic;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,7 +21,7 @@ import lombok.ToString;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @ToString
 @EqualsAndHashCode
-public class XkcdComic implements Serializable {
+public class XkcdComic implements Serializable, Comic {
 
     private static final long serialVersionUID = 7048126316068014259L;
 
