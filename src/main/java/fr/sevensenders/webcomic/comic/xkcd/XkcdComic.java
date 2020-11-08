@@ -2,7 +2,6 @@ package fr.sevensenders.webcomic.comic.xkcd;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import fr.sevensenders.webcomic.comic.Comic;
@@ -23,28 +22,17 @@ import lombok.ToString;
 @EqualsAndHashCode
 public class XkcdComic implements Serializable, Comic {
 
-    private static final long serialVersionUID = 7048126316068014259L;
+    private static final long serialVersionUID = -2068332119544064665L;
 
     private String month;
 
     private int num;
 
-    private String link;
-
     private String year;
-
-    private String news;
-
-    @JsonAlias("safe_title")
-    private String safeTitle;
-
-    private String transcript;
 
     private String alt;
 
     private String img;
-
-    private String string;
 
     private String title;
 

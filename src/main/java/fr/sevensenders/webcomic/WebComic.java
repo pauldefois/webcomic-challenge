@@ -8,6 +8,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Representation of a comic to be returned via the rest API.
+ */
 @NoArgsConstructor
 @Getter
 @Setter

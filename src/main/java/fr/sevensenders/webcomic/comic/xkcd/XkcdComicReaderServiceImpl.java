@@ -20,13 +20,14 @@ public class XkcdComicReaderServiceImpl implements XkcdComicReaderService {
 
     @Override
     public Optional<XkcdComic> findComicById(long id) {
-        final String url = xkcdComicProperties.getUrlComicById().replace(xkcdComicProperties.getIdTokenUrl(), String.valueOf(id));
+        final String url = xkcdComicProperties.getUrlComic() + "/" + id + xkcdComicProperties.getUriJsonAPI();
         return Optional.ofNullable(restTemplate.getForObject(url, XkcdComic.class));
     }
 
     @Override
     public Optional<XkcdComic> findCurrentComic() {
-        return Optional.ofNullable(restTemplate.getForObject(xkcdComicProperties.getUrlCurrentComic(), XkcdComic.class));
+        final String url = xkcdComicProperties.getUrlComic() + xkcdComicProperties.getUriJsonAPI();
+        return Optional.ofNullable(restTemplate.getForObject(url, XkcdComic.class));
     }
 
     @Override

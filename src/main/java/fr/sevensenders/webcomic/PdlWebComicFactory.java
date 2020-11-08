@@ -3,6 +3,9 @@ package fr.sevensenders.webcomic;
 import fr.sevensenders.webcomic.comic.pdl.PdlComic;
 import lombok.NoArgsConstructor;
 
+/**
+ * Factory implementation that allows to create a {@link WebComic} from a {@link PdlComic}.
+ */
 @NoArgsConstructor
 public class PdlWebComicFactory implements WebComicFactory<PdlComic> {
 

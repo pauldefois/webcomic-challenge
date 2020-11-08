@@ -8,14 +8,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ * Controller that provides the comics fetched on different sources.
+ */
 @RestController
 @RequiredArgsConstructor
 public class WebComicController {
 
+    private static final int NUMBER_OF_COMICS = 20;
+
     private final WebComicService webComicService;
 
-    @GetMapping(value = "/comics", produces = MediaType.APPLICATION_JSON_VALUE)
+    /**
+     * Get the 10 last web comics ordered by published date.
+     *
+     * @return the web comics
+     */
+    @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<WebComic> getComics() {
-        return webComicService.getComicsOrderedByDate(10);
+        return webComicService.getComicsOrderedByDate(NUMBER_OF_COMICS);
     }
 }

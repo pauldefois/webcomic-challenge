@@ -16,17 +16,12 @@ import lombok.Setter;
 public class XkcdComicProperties {
 
     /**
-     * Defines the URL of the API Xkcd to get the current comic.
+     * Defines the base URL to browse Xkcd comics.
      */
-    private String urlCurrentComic = "https://xkcd.com/info.0.json";
+    private String urlComic = "https://xkcd.com";
 
     /**
-     * Defines the URL of the API Xkcd to get a specific comic by ID.
+     * Defines the URI to consume to get the comic in json format.
      */
-    private String urlComicById = "https://xkcd.com/{id}/info.0.json";
-
-    /**
-     * Defines the token to replace in the URL {@link XkcdComicProperties#urlComicById} to fetch a specific comic.
-     */
-    private String idTokenUrl = "{id}";
+    private String uriJsonAPI = "/info.0.json";
 }

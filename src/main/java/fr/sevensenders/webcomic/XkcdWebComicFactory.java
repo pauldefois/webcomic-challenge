@@ -5,20 +5,26 @@ import java.text.ParseException;
 import org.apache.commons.lang3.time.FastDateFormat;
 
 import fr.sevensenders.webcomic.comic.xkcd.XkcdComic;
-import lombok.NoArgsConstructor;
+import fr.sevensenders.webcomic.comic.xkcd.XkcdComicProperties;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Factory implementation that allows to create a {@link WebComic} from a {@link XkcdComic}.
+ */
 @Slf4j
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class XkcdWebComicFactory implements WebComicFactory<XkcdComic> {
+
+    private final XkcdComicProperties xkcdComicProperties;
 
     @Override
     public WebComic getWebComic(final XkcdComic comic) {
         final WebComic webComic = new WebComic();
         webComic.setTitle(comic.getTitle());
-        webComic.setDescription(comic.getTranscript());
+        webComic.setDescription(comic.getAlt());
         webComic.setPictureUrl(comic.getImg());
-        webComic.setUrl(comic.getLink());
+        webComic.setUrl(xkcdComicProperties.getUrlComic() + "/" + comic.getNum());
         final FastDateFormat dateFormat = FastDateFormat.getInstance("dd/MM/YYYY");
         final String rawDate = String.format("%s/%s/%s", comic.getDay(), comic.getMonth(), comic.getYear());
         try {
