@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 /**
  * Controller that provides the comics fetched on different sources.
  */
-@RequestMapping
+@RequestMapping("/")
 @RequiredArgsConstructor
 public class WebComicController {
 

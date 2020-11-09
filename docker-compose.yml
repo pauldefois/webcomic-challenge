@@ -1,0 +1,8 @@
+version: '3.2'
+services:
+  webcomic-challenge:
+    container_name: webcomic-challenge
+    image: webcomic-challenge
+    restart: always
+    ports:
+      - 8080:8080
