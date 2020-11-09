@@ -11,6 +11,9 @@ import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * Unit test for {@link XkcdComicReaderServiceImpl}.
+ */
 @RunWith(JUnit4.class)
 public class XkcdComicReaderServieImplTest {
 

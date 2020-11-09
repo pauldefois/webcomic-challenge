@@ -53,4 +53,16 @@ public class WebComicConfiguration {
     public WebComicService webComicService(final List<WebComicFactory> webComicFactories, final List<ComicReaderService<? extends Comic>> comicReaderServices) {
         return new WebComicServiceImpl(webComicFactories.stream().collect(Collectors.toMap(WebComicFactory::getComicClass, Function.identity())), comicReaderServices);
     }
+
+    /**
+     * Initialisation of the controller that provide the web comics.
+     *
+     * @param webComicService the service fetching the comics from multiple sources
+     *
+     * @return the controller
+     */
+    @Bean
+    public WebComicController webComicController(final WebComicService webComicService) {
+        return new WebComicController(webComicService);
+    }
 }
